@@ -1,19 +1,26 @@
+using TaskBoad.Api.Autenticacao;
+using TaskBoad.Api.Erros;
+using TaskBoad.Application;
 using TaskBoad.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-// Banco de dados (EF Core + Supabase/Postgres). A connection string fica nos Segredos do Usuário.
-builder.Services.AddInfrastructure(builder.Configuration.GetConnectionString("TaskBoad"));
+// Erros de regra de negócio viram respostas 400/409 padronizadas.
+builder.Services.AddProblemDetails();
+builder.Services.AddExceptionHandler<TratadorDeExcecoes>();
+
+// Camadas da aplicação.
+builder.Services.AddApplication();
+builder.Services.AddInfrastructure(builder.Configuration.GetConnectionString("TaskBoad")); // fica nos Segredos do Usuário
+builder.Services.AddAutenticacaoSupabase(builder.Configuration);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+app.UseExceptionHandler();
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -21,7 +28,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+app.UseAuthentication(); // lê e valida o token
+app.UseAuthorization();  // aplica o [Authorize]
 
 app.MapControllers();
 

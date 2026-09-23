@@ -1,6 +1,27 @@
-@TaskBoad.Api_HostAddress = http://localhost:5141
+# Testes da API pelo próprio Visual Studio (clique em "Enviar solicitação" acima de cada bloco).
+# Preencha as variáveis abaixo. NÃO faça commit com a senha preenchida.
 
-GET {{TaskBoad.Api_HostAddress}}/weatherforecast/
-Accept: application/json
+@api = https://localhost:7205
+@supabase = https://gbhfticqcwuqftqwrjsh.supabase.co
+@chavePublica = COLE_AQUI_A_PUBLISHABLE_KEY
+@email = seu-usuario-de-teste@email.com
+@senha = SENHA_DO_USUARIO_DE_TESTE
 
-###
+### 1) Login no Supabase: copie o "access_token" da resposta
+POST {{supabase}}/auth/v1/token?grant_type=password
+apikey: {{chavePublica}}
+Content-Type: application/json
+
+{
+  "email": "{{email}}",
+  "password": "{{senha}}"
+}
+
+### 2) Cole o access_token aqui e chame a API
+@token = COLE_AQUI_O_ACCESS_TOKEN
+
+GET {{api}}/api/v1/perfil
+Authorization: Bearer {{token}}
+
+### 3) Sem token: deve responder 401
+GET {{api}}/api/v1/perfil
