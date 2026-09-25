@@ -11,7 +11,9 @@ public class ListaConfiguracao : IEntityTypeConfiguration<Lista>
         builder.ToTable("listas");
         builder.HasKey(l => l.Id);
 
-        builder.Property(l => l.Titulo).HasMaxLength(100).IsRequired();
+        builder.Property(l => l.Titulo)
+            .HasMaxLength(100)
+            .IsRequired();
 
         // Concorrência otimista: usa a coluna de sistema xmin do Postgres.
         // Se dois usuários alterarem a mesma lista ao mesmo tempo, o segundo recebe erro em vez de sobrescrever.

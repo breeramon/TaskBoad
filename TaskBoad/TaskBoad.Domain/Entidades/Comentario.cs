@@ -2,7 +2,7 @@ using TaskBoad.Domain.Comum;
 
 namespace TaskBoad.Domain.Entidades;
 
-/// <summary>Comentário de um usuário em um cartão.</summary>
+/// Comentário de um usuário em um cartão.
 public class Comentario : EntidadeBase
 {
     public Guid CartaoId { get; private set; }

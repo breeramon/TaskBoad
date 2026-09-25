@@ -2,11 +2,9 @@ using TaskBoad.Domain.Enums;
 
 namespace TaskBoad.Domain.Entidades;
 
-/// <summary>
 /// Ligação N:N entre Perfil e AreaDeTrabalho, com o papel do usuário.
 /// Chave composta (AreaDeTrabalhoId + UsuarioId), por isso não herda EntidadeBase.
 /// Só é criada/alterada pela própria AreaDeTrabalho.
-/// </summary>
 public class MembroAreaDeTrabalho
 {
     public Guid AreaDeTrabalhoId { get; private set; }

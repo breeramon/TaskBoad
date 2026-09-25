@@ -8,10 +8,8 @@ namespace TaskBoad.Api.Autenticacao;
 
 public static class AutenticacaoSupabase
 {
-    /// <summary>
-    /// Configura a API para aceitar os tokens (JWT) emitidos pelo Supabase Auth.
-    /// A API não faz login: só confere se o token é válido e de quem ele é.
-    /// </summary>
+    // Configura a API para aceitar os tokens (JWT) emitidos pelo Supabase Auth.
+    // A API não faz login: só confere se o token é válido e de quem ele é.
     public static IServiceCollection AddAutenticacaoSupabase(this IServiceCollection services, IConfiguration configuracao)
     {
         var urlSupabase = configuracao["Supabase:Url"];

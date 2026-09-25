@@ -2,7 +2,7 @@ using TaskBoad.Domain.Comum;
 
 namespace TaskBoad.Domain.Entidades;
 
-/// <summary>Cartão (tarefa) dentro de uma lista.</summary>
+/// Cartão (tarefa) dentro de uma lista.
 public class Cartao : EntidadeBase
 {
     public const int TamanhoMaximoTitulo = 200;

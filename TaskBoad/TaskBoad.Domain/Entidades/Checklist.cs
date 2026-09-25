@@ -2,7 +2,7 @@ using TaskBoad.Domain.Comum;
 
 namespace TaskBoad.Domain.Entidades;
 
-/// <summary>Lista de verificação dentro de um cartão (um cartão pode ter várias).</summary>
+/// Lista de verificação dentro de um cartão (um cartão pode ter várias).
 public class Checklist : EntidadeBase
 {
     private readonly List<ItemChecklist> _itens = [];

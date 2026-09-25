@@ -3,10 +3,8 @@ using TaskBoad.Domain.Enums;
 
 namespace TaskBoad.Domain.Entidades;
 
-/// <summary>
 /// Registro do histórico do quadro ("Ana moveu o cartão X de A fazer para Fazendo").
 /// Dados guarda detalhes em JSON (vira jsonb no Postgres), ex.: {"deLista":"...","paraLista":"..."}.
-/// </summary>
 public class Atividade : EntidadeBase
 {
     public Guid QuadroId { get; private set; }

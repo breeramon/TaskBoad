@@ -1,10 +1,8 @@
 namespace TaskBoad.Domain.Comum;
 
-/// <summary>
 /// Ordenação por posição fracionária: listas, cartões e itens guardam um double.
 /// Para mover um item entre dois outros, basta usar a média das posições vizinhas,
 /// sem precisar renumerar os demais.
-/// </summary>
 public static class CalculadoraDePosicao
 {
     public const double Intervalo = 1000;
@@ -21,7 +19,7 @@ public static class CalculadoraDePosicao
         (double a, double p) => (a + p) / 2
     };
 
-    /// <summary>Indica que os vizinhos estão próximos demais e a coleção deve ser renumerada.</summary>
+    /// Indica que os vizinhos estão próximos demais e a coleção deve ser renumerada.
     public static bool PrecisaRebalancear(double? anterior, double? proxima) =>
         anterior is double a && proxima is double p && p - a < 0.0001;
 }

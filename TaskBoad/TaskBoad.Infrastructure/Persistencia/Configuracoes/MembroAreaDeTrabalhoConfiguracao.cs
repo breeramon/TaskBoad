@@ -12,7 +12,9 @@ public class MembroAreaDeTrabalhoConfiguracao : IEntityTypeConfiguration<MembroA
         builder.HasKey(m => new { m.AreaDeTrabalhoId, m.UsuarioId });
 
         // Enum salvo como texto ("Dono", "Membro"...), mais legível no banco.
-        builder.Property(m => m.Papel).HasConversion<string>().HasMaxLength(20);
+        builder.Property(m => m.Papel)
+            .HasConversion<string>()
+            .HasMaxLength(20);
 
         builder.HasOne(m => m.Usuario).WithMany()
             .HasForeignKey(m => m.UsuarioId)

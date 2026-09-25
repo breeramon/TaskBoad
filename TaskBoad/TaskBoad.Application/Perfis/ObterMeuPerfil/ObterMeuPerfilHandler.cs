@@ -5,10 +5,8 @@ using TaskBoad.Domain.Entidades;
 
 namespace TaskBoad.Application.Perfis.ObterMeuPerfil;
 
-/// <summary>
-/// Devolve o perfil do usuário logado. No primeiro acesso, cria o perfil
-/// e a área de trabalho pessoal dele.
-/// </summary>
+// Devolve o perfil do usuário logado. No primeiro acesso, cria o perfil
+// e a área de trabalho pessoal dele.
 public sealed class ObterMeuPerfilHandler(IAppDbContext db, IUsuarioAtual usuarioAtual)
 {
     public async Task<PerfilDto> ExecutarAsync(CancellationToken cancellationToken = default)

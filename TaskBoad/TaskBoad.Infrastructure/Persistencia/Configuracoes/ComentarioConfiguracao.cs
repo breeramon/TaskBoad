@@ -11,7 +11,9 @@ public class ComentarioConfiguracao : IEntityTypeConfiguration<Comentario>
         builder.ToTable("comentarios");
         builder.HasKey(c => c.Id);
 
-        builder.Property(c => c.Texto).HasMaxLength(5_000).IsRequired();
+        builder.Property(c => c.Texto)
+            .HasMaxLength(5_000)
+            .IsRequired();
 
         builder.HasOne(c => c.Autor).WithMany()
             .HasForeignKey(c => c.AutorId)

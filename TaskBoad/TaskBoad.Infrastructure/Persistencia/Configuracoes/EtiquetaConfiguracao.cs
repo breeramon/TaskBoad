@@ -11,7 +11,11 @@ public class EtiquetaConfiguracao : IEntityTypeConfiguration<Etiqueta>
         builder.ToTable("etiquetas");
         builder.HasKey(e => e.Id);
 
-        builder.Property(e => e.Nome).HasMaxLength(50).IsRequired();
-        builder.Property(e => e.Cor).HasMaxLength(7).IsRequired();
+        builder.Property(e => e.Nome)
+            .HasMaxLength(50)
+            .IsRequired();
+        builder.Property(e => e.Cor)
+            .HasMaxLength(7)
+            .IsRequired();
     }
 }

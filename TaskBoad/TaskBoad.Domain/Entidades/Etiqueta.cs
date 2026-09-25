@@ -2,7 +2,7 @@ using TaskBoad.Domain.Comum;
 
 namespace TaskBoad.Domain.Entidades;
 
-/// <summary>Etiqueta colorida definida no quadro e aplicada aos cartões dele.</summary>
+/// Etiqueta colorida definida no quadro e aplicada aos cartões dele.
 public class Etiqueta : EntidadeBase
 {
     public Guid QuadroId { get; private set; }

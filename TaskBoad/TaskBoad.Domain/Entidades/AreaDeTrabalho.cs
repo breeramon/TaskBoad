@@ -3,10 +3,6 @@ using TaskBoad.Domain.Enums;
 
 namespace TaskBoad.Domain.Entidades;
 
-/// <summary>
-/// Área de trabalho (workspace): pessoal ou de um time pequeno.
-/// Quem é membro dela acessa todos os seus quadros, conforme o papel.
-/// </summary>
 public class AreaDeTrabalho : EntidadeBase
 {
     private readonly List<MembroAreaDeTrabalho> _membros = [];
@@ -33,7 +29,6 @@ public class AreaDeTrabalho : EntidadeBase
         _membros.Add(new MembroAreaDeTrabalho(Id, donoId, PapelAreaDeTrabalho.Dono));
     }
 
-    /// <summary>Área criada automaticamente no primeiro acesso do usuário.</summary>
     public static AreaDeTrabalho CriarPessoal(Guid donoId, string nome) =>
         new(nome, donoId, ehPessoal: true);
 
@@ -43,7 +38,6 @@ public class AreaDeTrabalho : EntidadeBase
         Descricao = Validar.TextoOpcional(descricao, 500, "area_de_trabalho.descricao");
     }
 
-    /// <summary>Papel do usuário na área, ou null se ele não for membro.</summary>
     public PapelAreaDeTrabalho? PapelDe(Guid usuarioId) =>
         _membros.FirstOrDefault(m => m.UsuarioId == usuarioId)?.Papel;
 

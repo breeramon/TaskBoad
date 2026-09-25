@@ -5,7 +5,7 @@ namespace TaskBoad.Application;
 
 public static class DependencyInjection
 {
-    /// <summary>Registra os casos de uso (handlers). Cada novo handler entra aqui.</summary>
+    // Registra os casos de uso (handlers). Cada novo handler entra aqui.
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
         services.AddScoped<ObterMeuPerfilHandler>();

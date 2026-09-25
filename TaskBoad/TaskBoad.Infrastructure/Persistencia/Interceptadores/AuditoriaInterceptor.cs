@@ -4,10 +4,8 @@ using TaskBoad.Domain.Comum;
 
 namespace TaskBoad.Infrastructure.Persistencia.Interceptadores;
 
-/// <summary>
 /// Roda antes de cada SaveChanges e preenche AtualizadoEm de toda entidade alterada.
 /// Assim nenhum caso de uso precisa lembrar de fazer isso.
-/// </summary>
 public sealed class AuditoriaInterceptor : SaveChangesInterceptor
 {
     public override InterceptionResult<int> SavingChanges(DbContextEventData eventData, InterceptionResult<int> result)

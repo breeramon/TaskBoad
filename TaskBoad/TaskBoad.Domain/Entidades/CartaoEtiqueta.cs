@@ -1,6 +1,6 @@
 namespace TaskBoad.Domain.Entidades;
 
-/// <summary>Ligação N:N entre Cartão e Etiqueta. Chave composta (CartaoId + EtiquetaId).</summary>
+/// Ligação N:N entre Cartão e Etiqueta. Chave composta (CartaoId + EtiquetaId).
 public class CartaoEtiqueta
 {
     public Guid CartaoId { get; private set; }

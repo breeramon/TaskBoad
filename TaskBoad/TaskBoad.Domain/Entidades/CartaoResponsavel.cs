@@ -1,6 +1,6 @@
 namespace TaskBoad.Domain.Entidades;
 
-/// <summary>Ligação N:N entre Cartão e o usuário responsável. Chave composta (CartaoId + UsuarioId).</summary>
+/// Ligação N:N entre Cartão e o usuário responsável. Chave composta (CartaoId + UsuarioId).
 public class CartaoResponsavel
 {
     public Guid CartaoId { get; private set; }

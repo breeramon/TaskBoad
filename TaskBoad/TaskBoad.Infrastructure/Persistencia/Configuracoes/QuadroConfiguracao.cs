@@ -11,8 +11,12 @@ public class QuadroConfiguracao : IEntityTypeConfiguration<Quadro>
         builder.ToTable("quadros");
         builder.HasKey(q => q.Id);
 
-        builder.Property(q => q.Titulo).HasMaxLength(100).IsRequired();
-        builder.Property(q => q.CorDeFundo).HasMaxLength(7);
+        builder.Property(q => q.Titulo)
+            .HasMaxLength(100)
+            .IsRequired();
+
+        builder.Property(q => q.CorDeFundo)
+            .HasMaxLength(7);
 
         builder.HasOne<Perfil>().WithMany()
             .HasForeignKey(q => q.CriadoPorId)

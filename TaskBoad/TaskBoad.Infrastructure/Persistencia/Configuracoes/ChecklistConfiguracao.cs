@@ -11,7 +11,9 @@ public class ChecklistConfiguracao : IEntityTypeConfiguration<Checklist>
         builder.ToTable("checklists");
         builder.HasKey(c => c.Id);
 
-        builder.Property(c => c.Titulo).HasMaxLength(100).IsRequired();
+        builder.Property(c => c.Titulo)
+            .HasMaxLength(100)
+            .IsRequired();
 
         builder.Ignore(c => c.TotalDeItens);
         builder.Ignore(c => c.ItensConcluidos);

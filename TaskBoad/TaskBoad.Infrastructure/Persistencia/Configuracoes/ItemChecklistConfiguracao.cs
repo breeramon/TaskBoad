@@ -11,6 +11,8 @@ public class ItemChecklistConfiguracao : IEntityTypeConfiguration<ItemChecklist>
         builder.ToTable("itens_checklist");
         builder.HasKey(i => i.Id);
 
-        builder.Property(i => i.Texto).HasMaxLength(500).IsRequired();
+        builder.Property(i => i.Texto)
+            .HasMaxLength(500)
+            .IsRequired();
     }
 }

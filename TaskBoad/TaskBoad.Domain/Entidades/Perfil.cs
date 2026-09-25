@@ -2,10 +2,8 @@ using TaskBoad.Domain.Comum;
 
 namespace TaskBoad.Domain.Entidades;
 
-/// <summary>
-/// Dados públicos do usuário. Login e senha ficam no Supabase Auth;
-/// o Id do perfil é o mesmo Id do usuário lá (auth.users.id).
-/// </summary>
+// Dados públicos do usuário. Login e senha ficam no Supabase Auth;
+// o Id do perfil é o mesmo Id do usuário lá (auth.users.id).
 public class Perfil : EntidadeBase
 {
     public static readonly string[] IdiomasSuportados = ["pt-BR", "en"];

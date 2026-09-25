@@ -2,7 +2,7 @@ using TaskBoad.Domain.Comum;
 
 namespace TaskBoad.Domain.Entidades;
 
-/// <summary>Item de um checklist. Criado apenas pelo próprio Checklist.</summary>
+/// Item de um checklist. Criado apenas pelo próprio Checklist.
 public class ItemChecklist : EntidadeBase
 {
     public Guid ChecklistId { get; private set; }

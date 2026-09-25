@@ -11,8 +11,12 @@ public class AreaDeTrabalhoConfiguracao : IEntityTypeConfiguration<AreaDeTrabalh
         builder.ToTable("areas_de_trabalho");
         builder.HasKey(a => a.Id);
 
-        builder.Property(a => a.Nome).HasMaxLength(100).IsRequired();
-        builder.Property(a => a.Descricao).HasMaxLength(500);
+        builder.Property(a => a.Nome)
+            .HasMaxLength(100)
+            .IsRequired();
+
+        builder.Property(a => a.Descricao)
+            .HasMaxLength(500);
 
         // Dono: não deixa apagar um perfil que ainda é dono de uma área.
         builder.HasOne<Perfil>().WithMany()

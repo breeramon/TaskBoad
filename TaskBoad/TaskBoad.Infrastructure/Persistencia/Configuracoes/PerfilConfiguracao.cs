@@ -11,10 +11,17 @@ public class PerfilConfiguracao : IEntityTypeConfiguration<Perfil>
         builder.ToTable("perfis");
         builder.HasKey(p => p.Id);
 
-        builder.Property(p => p.Nome).HasMaxLength(100).IsRequired();
-        builder.Property(p => p.Email).HasMaxLength(256).IsRequired();
-        builder.Property(p => p.AvatarUrl).HasMaxLength(500);
-        builder.Property(p => p.Idioma).HasMaxLength(10).IsRequired();
+        builder.Property(p => p.Nome)
+            .HasMaxLength(100)
+            .IsRequired();
+        builder.Property(p => p.Email)
+            .HasMaxLength(256)
+            .IsRequired();
+        builder.Property(p => p.AvatarUrl)
+            .HasMaxLength(500);
+        builder.Property(p => p.Idioma)
+            .HasMaxLength(10)
+            .IsRequired();
 
         builder.HasIndex(p => p.Email).IsUnique();
     }

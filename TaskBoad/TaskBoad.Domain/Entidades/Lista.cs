@@ -2,7 +2,7 @@ using TaskBoad.Domain.Comum;
 
 namespace TaskBoad.Domain.Entidades;
 
-/// <summary>Coluna do quadro (ex.: "A fazer", "Fazendo", "Feito").</summary>
+/// Coluna do quadro (ex.: "A fazer", "Fazendo", "Feito").
 public class Lista : EntidadeBase
 {
     private readonly List<Cartao> _cartoes = [];

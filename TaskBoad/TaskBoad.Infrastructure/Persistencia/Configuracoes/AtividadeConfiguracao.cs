@@ -11,10 +11,13 @@ public class AtividadeConfiguracao : IEntityTypeConfiguration<Atividade>
         builder.ToTable("atividades");
         builder.HasKey(a => a.Id);
 
-        builder.Property(a => a.Tipo).HasConversion<string>().HasMaxLength(40);
+        builder.Property(a => a.Tipo)
+            .HasConversion<string>()
+            .HasMaxLength(40);
 
         // JSON com os detalhes do evento, guardado no tipo jsonb do Postgres.
-        builder.Property(a => a.Dados).HasColumnType("jsonb");
+        builder.Property(a => a.Dados)
+            .HasColumnType("jsonb");
 
         builder.HasOne<Quadro>().WithMany()
             .HasForeignKey(a => a.QuadroId)

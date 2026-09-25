@@ -11,14 +11,22 @@ public class CartaoConfiguracao : IEntityTypeConfiguration<Cartao>
         builder.ToTable("cartoes");
         builder.HasKey(c => c.Id);
 
-        builder.Property(c => c.Titulo).HasMaxLength(Cartao.TamanhoMaximoTitulo).IsRequired();
-        builder.Property(c => c.Descricao).HasMaxLength(Cartao.TamanhoMaximoDescricao);
-        builder.Property(c => c.CorDaCapa).HasMaxLength(7);
+        builder.Property(c => c.Titulo)
+            .HasMaxLength(Cartao.TamanhoMaximoTitulo)
+            .IsRequired();
+
+        builder.Property(c => c.Descricao)
+            .HasMaxLength(Cartao.TamanhoMaximoDescricao);
+
+        builder.Property(c => c.CorDaCapa)
+            .HasMaxLength(7);
 
         // Propriedade calculada no C#: não vira coluna.
         builder.Ignore(c => c.Concluido);
 
-        builder.Property<uint>("Versao").HasColumnName("xmin").IsRowVersion();
+        builder.Property<uint>("Versao")
+            .HasColumnName("xmin")
+            .IsRowVersion();
 
         builder.HasOne<Perfil>().WithMany()
             .HasForeignKey(c => c.CriadoPorId)

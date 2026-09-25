@@ -1,9 +1,7 @@
 namespace TaskBoad.Domain.Enums;
 
-/// <summary>
 /// Papel do usuário dentro de uma área de trabalho. Vale para todos os quadros dela.
 /// Os valores crescem com o nível de permissão, para permitir comparações (papel >= Membro).
-/// </summary>
 public enum PapelAreaDeTrabalho
 {
     Leitor = 1,   // só visualiza

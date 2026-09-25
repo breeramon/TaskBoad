@@ -4,10 +4,8 @@ using TaskBoad.Domain.Comum;
 
 namespace TaskBoad.Api.Erros;
 
-/// <summary>
 /// Converte exceções conhecidas em respostas HTTP padronizadas (ProblemDetails).
 /// O campo "codigo" é o que o front usa para traduzir a mensagem (i18n).
-/// </summary>
 internal sealed class TratadorDeExcecoes(IProblemDetailsService problemDetails) : IExceptionHandler
 {
     public async ValueTask<bool> TryHandleAsync(HttpContext contexto, Exception excecao, CancellationToken cancellationToken)

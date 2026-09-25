@@ -1,6 +1,6 @@
 namespace TaskBoad.Domain.Enums;
 
-/// <summary>Tipos de evento registrados no histórico do quadro.</summary>
+/// Tipos de evento registrados no histórico do quadro.
 public enum TipoAtividade
 {
     QuadroCriado = 1,

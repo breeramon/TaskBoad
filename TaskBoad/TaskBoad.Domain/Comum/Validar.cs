@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 
 namespace TaskBoad.Domain.Comum;
 
-/// <summary>Validações reutilizadas pelas entidades.</summary>
+/// Validações reutilizadas pelas entidades.
 internal static class Validar
 {
     private static readonly Regex RegexCor = new("^#[0-9A-Fa-f]{6}$", RegexOptions.Compiled);

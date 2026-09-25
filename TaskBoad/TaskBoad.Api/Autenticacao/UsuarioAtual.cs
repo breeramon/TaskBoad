@@ -4,7 +4,7 @@ using TaskBoad.Application.Abstracoes;
 
 namespace TaskBoad.Api.Autenticacao;
 
-/// <summary>Lê os dados do usuário a partir dos claims do token da requisição atual.</summary>
+/// Lê os dados do usuário a partir dos claims do token da requisição atual.
 internal sealed class UsuarioAtual(IHttpContextAccessor acessor) : IUsuarioAtual
 {
     private ClaimsPrincipal? Principal => acessor.HttpContext?.User;
@@ -18,10 +18,8 @@ internal sealed class UsuarioAtual(IHttpContextAccessor acessor) : IUsuarioAtual
 
     public string? Email => Principal?.FindFirstValue("email");
 
-    /// <summary>
     /// O Supabase coloca os dados do cadastro no claim "user_metadata" (um JSON).
     /// No login com Google vem "full_name" ou "name".
-    /// </summary>
     public string? Nome
     {
         get
