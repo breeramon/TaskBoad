@@ -16,7 +16,6 @@ public static class AutenticacaoSupabase
         if (string.IsNullOrWhiteSpace(urlSupabase))
             throw new InvalidOperationException("Configure 'Supabase:Url' no appsettings.json.");
 
-        // Ex.: https://abcd.supabase.co/auth/v1 — é o valor do claim "iss" dos tokens.
         var emissor = $"{urlSupabase.TrimEnd('/')}/auth/v1";
 
         services
